@@ -63,3 +63,13 @@
 - ผลลัพธ์: สร้าง `specs/001-booking/tasks.md` เป็นรายการงาน 18 task เรียงตามการพึ่งพา ครอบคลุม AC และ Constraint ทุกตัว
 - งานที่รอคำตอบ: 4 task รอ `Q-02` เรื่องรูปแบบและวิธีออกหมายเลขคิว
 - ยังไม่ได้เขียนโค้ดหรือเริ่มทำ task ใด ๆ
+
+---
+
+## 2026-09-23 คำสั่ง: /implement T-01
+
+- เครื่องมือ: Copilot ใน Codespaces
+- ไฟล์ที่สร้างหรือแก้: `backend/app/db/models.py`, `backend/app/db/session.py`, `backend/app/db/migrations/001_init.py`, `backend/tests/conftest.py`
+- ผลลัพธ์: สร้างโมเดล `slots`, `bookings`, `audit_logs`, session factory และ migration `upgrade(engine)` โดยตาราง `bookings` ไม่มี `national_id`
+- ผล test: `python -m compileall -q app tests` ผ่าน; `pytest -q` ไม่พบ test (`no tests ran`); smoke test migration บน SQLite ผ่าน (`T-01 schema smoke test passed`)
+- สิ่งที่เกือบต้องเดา: ไม่มี; ใช้ฟิลด์ตาม plan.md และคง `queue_no` เป็น nullable ตาม Q-02 ที่ยังเปิดอยู่
