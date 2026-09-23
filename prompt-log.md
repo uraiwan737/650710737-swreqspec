@@ -73,3 +73,13 @@
 - ผลลัพธ์: สร้างโมเดล `slots`, `bookings`, `audit_logs`, session factory และ migration `upgrade(engine)` โดยตาราง `bookings` ไม่มี `national_id`
 - ผล test: `python -m compileall -q app tests` ผ่าน; `pytest -q` ไม่พบ test (`no tests ran`); smoke test migration บน SQLite ผ่าน (`T-01 schema smoke test passed`)
 - สิ่งที่เกือบต้องเดา: ไม่มี; ใช้ฟิลด์ตาม plan.md และคง `queue_no` เป็น nullable ตาม Q-02 ที่ยังเปิดอยู่
+
+---
+
+## 2026-09-23 คำสั่ง: /implement T-14
+
+- เครื่องมือ: Copilot ใน Codespaces
+- ไฟล์ที่สร้างหรือแก้: `frontend/src/pages/SlotPicker.jsx`, `frontend/src/App.jsx`, `frontend/src/__tests__/SlotPicker.test.jsx`
+- ผลลัพธ์: สร้างหน้าจอเลือกแพ็กเกจและช่วงเวลาที่แสดงวัน เวลา และที่นั่งคงเหลือจาก API จำลอง พร้อมโหลดช่วงเวลาใหม่เมื่อเปลี่ยนแพ็กเกจ
+- ผล test: `npm test -- --run src/__tests__/SlotPicker.test.jsx` ผ่าน 2 tests
+- สิ่งที่เกือบต้องเดา: ไม่พบข้อมูลที่ต้องเดา; ใช้สัญญา `GET /slots` จาก plan.md และใช้ `STANDARD`/`PREMIUM` เป็นตัวเลือกตามหน้าจอแพ็กเกจที่กำหนดใน task

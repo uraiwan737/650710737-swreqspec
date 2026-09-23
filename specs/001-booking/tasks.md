@@ -120,7 +120,7 @@
 - ไฟล์ที่แตะ: `frontend/src/pages/SlotPicker.jsx`, `frontend/src/App.jsx`, `frontend/src/api/client.js`, `frontend/src/__tests__/SlotPicker.test.jsx`
 - ต้องทำหลัง: ไม่มี
 - เสร็จเมื่อ: หน้าจอแสดงวัน ช่วงเวลา และที่นั่งคงเหลือจาก API จำลอง และโหลดข้อมูลใหม่เมื่อเปลี่ยนแพ็กเกจ
-- สถานะ: พร้อมทำ
+- สถานะ: เสร็จ รอทีมตรวจ
 
 ### T-15 สร้างหน้าจอยืนยันและแสดงตัวเลือกทดแทน
 - รองรับ: FR-BKG-03, FR-BKG-04
